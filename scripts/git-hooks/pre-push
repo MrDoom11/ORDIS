@@ -1,8 +1,8 @@
 #!/bin/sh
-# Trava de push. Para o repositório público (o remoto "origin"):
-# - só aceita o branch main;
-# - verifica de novo o conteúdo dos commits enviados;
-# - exige o e-mail sem dados pessoais do GitHub (@users.noreply.github.com).
+# Trava de push. Para o repositório público (o remoto "origin"), qualquer
+# branch é aceito, mas os commits que ele ainda não tem passam por:
+# - nova verificação do conteúdo (dados pessoais e segredos);
+# - exigência do e-mail sem dados pessoais do GitHub (@users.noreply.github.com).
 # Outros remotos (como o privado) passam sem restrição.
 remoto="$1"
 dir=$(dirname "$0")
@@ -12,25 +12,21 @@ zero=0000000000000000000000000000000000000000
 falhou=0
 while read -r ref_local sha_local ref_remoto sha_remoto; do
   [ "$sha_local" = "$zero" ] && continue   # remoção de branch
-  if [ "$ref_remoto" != "refs/heads/main" ]; then
-    echo "Push recusado: o repositório público só recebe o main (tentou $ref_remoto)." >&2
-    echo "Para testes, use: git push privado <branch>" >&2
-    falhou=1
-    continue
-  fi
+  # Branch novo: só o que nenhum branch do público já tem.
   if [ "$sha_remoto" = "$zero" ]; then
-    intervalo="$sha_local"
+    commits=$(git rev-list "$sha_local" --not --remotes=origin)
   else
-    intervalo="$sha_remoto..$sha_local"
+    commits=$(git rev-list "$sha_remoto..$sha_local")
   fi
-  emails=$(git log --format='%ae%n%ce' "$intervalo" | sort -u | grep -v '@users.noreply.github.com$' | grep -v '^noreply@anthropic.com$')
+  [ -n "$commits" ] || continue
+  emails=$(git show -s --format='%ae%n%ce' $commits | sort -u | grep -v '@users.noreply.github.com$' | grep -v '^noreply@anthropic.com$')
   if [ -n "$emails" ]; then
-    echo "Push recusado: commits com e-mail que fica público: $emails" >&2
+    echo "Push recusado ($ref_remoto): commits com e-mail que fica público: $emails" >&2
     echo "Use o endereço @users.noreply.github.com (git config user.email)." >&2
     falhou=1
   fi
-  if ! git log -p --no-color -U0 --format= "$intervalo" | grep '^+' | grep -v '^+++ ' | sh "$dir/verificar.sh"; then
-    echo "Push recusado: os commits acima contêm dados pessoais ou segredos." >&2
+  if ! git show -p --no-color -U0 --format= $commits | grep '^+' | grep -v '^+++ ' | sh "$dir/verificar.sh"; then
+    echo "Push recusado ($ref_remoto): os commits acima contêm dados pessoais ou segredos." >&2
     falhou=1
   fi
 done
