@@ -306,6 +306,16 @@ fn modelos_abrir_pasta(c: State<'_, Ctx>, qual: String) -> Result<(), String> {
 }
 
 #[tauri::command]
+fn pessoal(c: State<'_, Ctx>) -> Value {
+    agente::pessoal(&c.caminhos)
+}
+
+#[tauri::command]
+fn pessoal_salvar(c: State<'_, Ctx>, tratamento: String, sobre: String) -> Result<(), String> {
+    agente::salvar_pessoal(&c.caminhos, &tratamento, &sobre)
+}
+
+#[tauri::command]
 fn proxmox_estado(c: State<'_, Ctx>) -> proxmox::Conexao {
     proxmox::estado(&c.caminhos)
 }
@@ -357,6 +367,8 @@ fn main() {
             cancelar_imagem,
             imagens_recentes,
             abrir_no_windows,
+            pessoal,
+            pessoal_salvar,
             proxmox_estado,
             proxmox_salvar,
             proxmox_testar,

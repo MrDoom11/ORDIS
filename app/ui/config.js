@@ -14,6 +14,45 @@
   window.addEventListener('tema', (e) => marcarTema(e.detail));
   marcarTema(window.ordisTema.atual());
 
+  // ---------- Sobre você ----------
+
+  let pessoalSalvo = { tratamento: '', sobre: '' };
+
+  const pessoalAtual = () => ({ tratamento: $('pe-tratamento').value.trim(), sobre: $('pe-texto').value.trim() });
+  const pessoalMudou = () => {
+    const a = pessoalAtual();
+    return a.tratamento !== pessoalSalvo.tratamento || a.sobre !== pessoalSalvo.sobre;
+  };
+
+  async function carregarPessoal() {
+    // Não sobrescreve o que está sendo digitado ao voltar para a aba.
+    if (pessoalMudou()) return;
+    pessoalSalvo = await invoke('pessoal');
+    $('pe-tratamento').value = pessoalSalvo.tratamento;
+    $('pe-texto').value = pessoalSalvo.sobre;
+    $('pe-estado').textContent = '';
+  }
+
+  for (const id of ['pe-tratamento', 'pe-texto']) {
+    $(id).addEventListener('input', () => {
+      $('pe-estado').textContent = pessoalMudou() ? 'Alterações não salvas' : '';
+    });
+  }
+  $('pe-salvar').addEventListener('click', async () => {
+    $('pe-salvar').disabled = true;
+    try {
+      const atual = pessoalAtual();
+      await invoke('pessoal_salvar', atual);
+      pessoalSalvo = atual;
+      $('pe-estado').textContent = '';
+      avisar('Salvo. Vale a partir da próxima mensagem, inclusive nas conversas abertas.');
+    } catch (e) {
+      avisar(String(e), true);
+    } finally {
+      $('pe-salvar').disabled = false;
+    }
+  });
+
   // ---------- Proxmox ----------
 
   function resumoNos(v) {
@@ -72,6 +111,9 @@
   );
   $('px-testar').addEventListener('click', () => ocupado(() => invoke('proxmox_testar')));
   window.addEventListener('aba', (e) => {
-    if (e.detail === 'config') carregar();
+    if (e.detail === 'config') {
+      carregar();
+      carregarPessoal();
+    }
   });
 })();

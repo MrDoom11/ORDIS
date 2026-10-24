@@ -36,7 +36,7 @@ Conversa com o Qwen pelo TabbyAPI, com raciocínio recolhível, markdown, imagen
 - Cada resposta tem botão de copiar; a última tem também **Refazer**, que descarta a resposta e pergunta de novo. Blocos de código têm botão de copiar próprio.
 - Imagens podem ser anexadas pelo clipe, coladas ou arrastadas para a conversa.
 
-- Prompt de sistema: `agente\workspace\AGENTS.md`, mais a data e a hora atuais.
+- Prompt de sistema: `agente\workspace\AGENTS.md`, mais o tratamento do usuário e o `AGENTS.local.md` (fora do Git, editados em Configurações > Operador) e a data e a hora atuais.
 - Conversas: `runtime\agente\sessoes\*.json`. Imagens anexadas: `agente\workspace\anexos`.
 - Contexto: 32.768 tokens, com até 4.096 por resposta. Turnos antigos saem da janela por estimativa (3 caracteres por token); só as imagens do turno atual são enviadas ao modelo.
 - Ferramentas, com os mesmos nomes que o OpenClaw usava:
@@ -68,6 +68,11 @@ Estado da inferência e do gerador de imagens, memória da GPU e tokens/s (de `r
 - Passos, cfg, sampler, scheduler e o limite por resposta ficam em `runtime\modelos.json`. Sem esse arquivo valem os padrões de fábrica (Qwen3.8-27B e RealVisXL V5).
 - **Testar conversa** carrega o modelo e confere resposta curta, raciocínio separado, chamada de ferramenta e, com visão ligada, a leitura de uma imagem. **Testar imagem** gera uma imagem de 12 passos. **Restaurar padrão** preenche os valores de fábrica.
 - A tela avisa quando o modelo parece não caber na GPU (pelo tamanho dos arquivos) ou quando a pasta não indica visão.
+
+**Operador.** Dois campos que o agente lê no início de toda conversa, fora do Git; valem a partir da próxima mensagem, inclusive nas conversas já abertas:
+
+- *Como o ORDIS deve chamar o Operador?*: até 60 caracteres, em `runtime\agente\tratamento.txt`. Vazio, ele chama o usuário de Operador. O tratamento vale mesmo que o "Sobre você" cite outro nome.
+- *Sobre você*: texto livre (preferências, contexto, o que ele deve seguir), até 4.000 caracteres, em `agente\workspace\AGENTS.local.md`. Salvar vazio apaga o arquivo.
 
 Também ficam aqui o tema, a lista de atalhos e a conexão somente leitura com o Proxmox: endereço, ID do token, segredo e CA. O segredo é cifrado com DPAPI para o usuário Windows e gravado em `runtime\proxmox`. As consultas usam HTTPS confiando só na CA do servidor, sem redirecionamentos e com até 50 chamadas por consulta.
 

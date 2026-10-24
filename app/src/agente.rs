@@ -151,11 +151,67 @@ fn salvar_anexo(c: &Caminhos, url: &str) -> Result<PathBuf, String> {
     Ok(destino)
 }
 
-/// `AGENTS.md` traz as regras gerais (versionado); `AGENTS.local.md`, se
-/// existir, acrescenta o que é pessoal, como o nome do usuário (fora do Git).
+const ARQUIVO_PESSOAL: &str = "AGENTS.local.md";
+const LIMITE_PESSOAL: usize = 4000;
+const LIMITE_TRATAMENTO: usize = 60;
+const TRATAMENTO_PADRAO: &str = "Operador";
+
+fn arquivo_tratamento(c: &Caminhos) -> PathBuf {
+    c.runtime.join("agente/tratamento.txt")
+}
+
+/// Grava o texto ou, se vazio, apaga o arquivo.
+fn gravar_ou_apagar(destino: &Path, texto: &str) -> Result<(), String> {
+    if texto.is_empty() {
+        return match fs::remove_file(destino) {
+            Err(e) if e.kind() != std::io::ErrorKind::NotFound => Err(e.to_string()),
+            _ => Ok(()),
+        };
+    }
+    if let Some(pasta) = destino.parent() {
+        fs::create_dir_all(pasta).map_err(|e| e.to_string())?;
+    }
+    fs::write(destino, format!("{texto}\n")).map_err(|e| format!("Falha ao salvar: {e}"))
+}
+
+/// Seção "Sobre você" das Configurações: como chamar o usuário (vazio usa
+/// "Operador") e o texto livre do `AGENTS.local.md`.
+pub fn pessoal(c: &Caminhos) -> Value {
+    let ler = |p: PathBuf| fs::read_to_string(p).unwrap_or_default().trim().to_string();
+    json!({
+        "tratamento": ler(arquivo_tratamento(c)),
+        "sobre": ler(ferramentas::workspace(c).join(ARQUIVO_PESSOAL)),
+    })
+}
+
+/// Grava a seção "Sobre você". Vale a partir da próxima resposta.
+pub fn salvar_pessoal(c: &Caminhos, tratamento: &str, sobre: &str) -> Result<(), String> {
+    let tratamento = tratamento.split_whitespace().collect::<Vec<_>>().join(" ");
+    let sobre = sobre.trim();
+    if tratamento.chars().count() > LIMITE_TRATAMENTO {
+        return Err(format!("O tratamento passou de {LIMITE_TRATAMENTO} caracteres."));
+    }
+    if sobre.chars().count() > LIMITE_PESSOAL {
+        return Err(format!("O texto passou de {LIMITE_PESSOAL} caracteres; ele entra em toda conversa."));
+    }
+    gravar_ou_apagar(&arquivo_tratamento(c), &tratamento)?;
+    gravar_ou_apagar(&ferramentas::workspace(c).join(ARQUIVO_PESSOAL), sobre)
+}
+
+fn regra_tratamento(c: &Caminhos) -> String {
+    let t = fs::read_to_string(arquivo_tratamento(c)).unwrap_or_default();
+    let t = match t.trim() {
+        "" => TRATAMENTO_PADRAO,
+        t => t,
+    };
+    format!("Chame o usuário de {t}. Use sempre esse tratamento, mesmo que outras informações mencionem outro nome.")
+}
+
+/// `AGENTS.md` traz as regras gerais (versionado); o tratamento e o
+/// `AGENTS.local.md`, se existir, acrescentam o que é pessoal (fora do Git).
 fn prompt_sistema(c: &Caminhos) -> String {
     let ler = |nome: &str| fs::read_to_string(ferramentas::workspace(c).join(nome)).unwrap_or_default();
-    let base = [ler("AGENTS.md"), ler("AGENTS.local.md")]
+    let base = [ler("AGENTS.md"), regra_tratamento(c), ler(ARQUIVO_PESSOAL)]
         .iter()
         .map(|t| t.trim())
         .filter(|t| !t.is_empty())
@@ -463,4 +519,29 @@ fn garantir_inferencia(c: &Caminhos, saida: &dyn Saida) -> Result<(), String> {
     }
     saida.evento("status", json!({"texto": "Carregando o modelo..."}));
     controle::iniciar(c, &|m: &str| saida.evento("status", json!({"texto": m})))
+}
+
+#[cfg(test)]
+mod testes {
+    use super::*;
+
+    #[test]
+    fn tratamento_padrao_e_personalizado() {
+        let raiz = std::env::temp_dir().join(format!("ordis-teste-{}", controle::sufixo_unico()));
+        let c = Caminhos { projeto: raiz.join("projeto"), runtime: raiz.join("runtime") };
+        fs::create_dir_all(ferramentas::workspace(&c)).unwrap();
+        assert!(regra_tratamento(&c).contains("de Operador."));
+
+        salvar_pessoal(&c, "  Chefe \n ", "Prefiro respostas curtas.").unwrap();
+        assert_eq!(pessoal(&c), json!({"tratamento": "Chefe", "sobre": "Prefiro respostas curtas."}));
+        assert!(regra_tratamento(&c).contains("de Chefe."));
+
+        // Campos vazios apagam os arquivos e voltam ao padrão.
+        salvar_pessoal(&c, "", "").unwrap();
+        assert!(!arquivo_tratamento(&c).exists());
+        assert!(!ferramentas::workspace(&c).join(ARQUIVO_PESSOAL).exists());
+        assert!(regra_tratamento(&c).contains("de Operador."));
+        assert!(salvar_pessoal(&c, &"x".repeat(61), "").is_err());
+        let _ = fs::remove_dir_all(raiz);
+    }
 }
