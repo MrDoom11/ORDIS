@@ -1,0 +1,37 @@
+[package]
+name = "ordis"
+version = "0.1.0"
+edition = "2021"
+description = "ORDIS: painel, agente e controles locais"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+sysinfo = "0.33"
+ureq = { version = "2", features = ["json"] }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+html2text = "0.14"
+base64 = "0.22"
+url = "2"
+sha2 = "0.10"
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "tls12", "logging"] }
+tungstenite = { version = "0.24", default-features = false, features = ["handshake"] }
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_Security_Cryptography",
+  "Win32_Storage_FileSystem",
+  "Win32_System_Console",
+  "Win32_System_IO",
+  "Win32_System_Threading",
+] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

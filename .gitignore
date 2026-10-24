@@ -1,0 +1,28 @@
+# Segredos e configuração local
+.env
+.env.*
+!.env.example
+secrets/
+
+# Instalações, modelos, conversas, credenciais e logs (tudo em runtime/)
+runtime/
+
+# Dados pessoais do agente: imagens geradas, anexos e o complemento local do prompt
+agente/workspace/imagens/
+agente/workspace/anexos/
+agente/workspace/AGENTS.local.md
+
+# Compilação e app instalado
+app/target/
+app/gen/
+/bin/
+
+# Registros antigos e relatórios com dados da máquina (ficam só localmente)
+historico/
+
+# Testes, saídas e anotações com dados reais, e os padrões pessoais das travas
+local/
+
+# Python
+__pycache__/
+*.log

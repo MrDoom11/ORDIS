@@ -1,0 +1,4 @@
+# O toolchain GNU traz o próprio linker e não depende do Windows SDK.
+[toolchain]
+channel = "stable-x86_64-pc-windows-gnu"
+profile = "minimal"

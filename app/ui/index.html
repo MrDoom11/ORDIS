@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORDIS</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="tema.js"></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true">
+    <defs>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+      <symbol id="i-imagem" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4.5-4.5L6 21"/></symbol>
+      <symbol id="i-painel" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+      <symbol id="i-ajustes" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
+      <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-clipe" viewBox="0 0 24 24"><path d="m21 11-8.6 8.6a5 5 0 0 1-7-7l8.5-8.6a3.3 3.3 0 0 1 4.7 4.7l-8.6 8.6a1.7 1.7 0 0 1-2.4-2.4l7.9-7.9"/></symbol>
+      <symbol id="i-enviar" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-parar" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+      <symbol id="i-ok" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></symbol>
+      <symbol id="i-refazer" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.5 6.2L3 16M3 21v-5h5"/></symbol>
+      <symbol id="i-lapis" viewBox="0 0 24 24"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"/></symbol>
+      <symbol id="i-lixo" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+      <symbol id="i-lateral" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+      <symbol id="i-busca" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+      <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></symbol>
+      <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-lua" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+      <symbol id="i-sistema" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+      <symbol id="i-dado" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-pasta" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+      <symbol id="i-externo" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+      <symbol id="i-energia" viewBox="0 0 24 24"><path d="M12 3v9M6.3 6.3a8 8 0 1 0 11.4 0"/></symbol>
+      <symbol id="i-arquivo" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-voltar" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-4"/></symbol>
+    </defs>
+  </svg>
+
+  <nav class="trilho">
+    <img class="marca" src="ordis.png" alt="ORDIS">
+    <button class="aba ativa" data-vista="agente" data-dica="Agente · Ctrl+1"><svg><use href="#i-chat"/></svg></button>
+    <button class="aba" data-vista="imagens" data-dica="Imagens · Ctrl+2"><svg><use href="#i-imagem"/></svg></button>
+    <button class="aba" data-vista="painel" data-dica="Painel · Ctrl+3"><svg><use href="#i-painel"/></svg></button>
+    <div class="espaco"></div>
+    <button id="tema-rapido" class="aba" data-dica="Tema"><svg><use href="#i-sistema"/></svg></button>
+    <button id="status-global" class="aba status" data-dica="Serviços"><span class="ponto"></span></button>
+    <button class="aba" data-vista="config" data-dica="Configurações · Ctrl+4"><svg><use href="#i-ajustes"/></svg></button>
+  </nav>
+
+  <div id="popover-servicos" class="popover" hidden>
+    <div id="pop-linhas"></div>
+    <p id="pop-vram" class="sutil pequeno"></p>
+    <button id="pop-acao" class="primario largo">Iniciar</button>
+  </div>
+
+  <div class="conteudo">
+    <main id="vista-agente" class="vista agente">
+      <aside class="conversas">
+        <div class="busca">
+          <svg><use href="#i-busca"/></svg>
+          <input id="busca-conversas" placeholder="Buscar conversas" autocomplete="off">
+        </div>
+        <button id="nova" class="nova"><svg><use href="#i-mais"/></svg>Nova conversa<kbd>Ctrl+N</kbd></button>
+        <div id="lista-conversas" class="lista-conversas"></div>
+      </aside>
+      <section class="chat">
+        <header class="cabecalho-chat">
+          <button id="alternar-conversas" class="icone" data-dica="Conversas · Ctrl+B"><svg><use href="#i-lateral"/></svg></button>
+          <h1 id="titulo-conversa" class="titulo-conversa">Nova conversa</h1>
+        </header>
+        <div id="mensagens" class="mensagens"></div>
+        <button id="ir-fim" class="ir-fim icone" data-dica="Ir para o fim" hidden><svg><use href="#i-baixo"/></svg></button>
+        <div class="rodape">
+          <div class="compositor" id="compositor">
+            <div id="anexos" class="anexos"></div>
+            <textarea id="entrada" rows="1" placeholder="Pergunte ao ORDIS…"></textarea>
+            <div class="barra-compositor">
+              <button id="anexar" class="icone" data-dica="Anexar imagem"><svg><use href="#i-clipe"/></svg></button>
+              <span id="estado-agente" class="estado-agente"></span>
+              <button id="enviar" class="enviar" data-dica="Enviar · Enter"><svg><use href="#i-enviar"/></svg></button>
+            </div>
+          </div>
+          <input id="arquivo" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden>
+        </div>
+      </section>
+    </main>
+
+    <main id="vista-imagens" class="vista imagens" hidden>
+      <section class="formulario">
+        <h1>Imagens</h1>
+        <p id="img-subtitulo" class="sutil">RealVisXL, gerado localmente. O prompt vai exatamente como escrito.</p>
+        <label for="img-prompt">Prompt</label>
+        <textarea id="img-prompt" rows="5" maxlength="3000" placeholder="a futuristic lighthouse at sunset, photographic"></textarea>
+        <label for="img-negativo">Prompt negativo <span class="fraco">opcional</span></label>
+        <textarea id="img-negativo" rows="2" maxlength="1500"></textarea>
+        <label>Formato</label>
+        <div id="img-formato" class="segmentos formatos">
+          <button data-valor="1024x1024" class="ativo"><i class="forma quadrado"></i>Quadrado</button>
+          <button data-valor="832x1216"><i class="forma retrato"></i>Retrato</button>
+          <button data-valor="1216x832"><i class="forma paisagem"></i>Paisagem</button>
+        </div>
+        <label for="img-seed">Seed <span class="fraco">vazia = aleatória</span></label>
+        <div class="campo-com-botao">
+          <input id="img-seed" inputmode="numeric" autocomplete="off" placeholder="aleatória">
+          <button id="img-sortear" class="icone" data-dica="Sortear seed"><svg><use href="#i-dado"/></svg></button>
+        </div>
+        <div class="acoes">
+          <button id="img-gerar" class="primario">Gerar imagem</button>
+          <button id="img-cancelar" hidden>Cancelar</button>
+        </div>
+        <div class="progresso" id="img-progresso" hidden><div id="img-barra"></div></div>
+        <p id="img-estado" class="sutil pequeno">Ao gerar, o Qwen sai da GPU e volta no fim. Leva alguns minutos.</p>
+      </section>
+      <section class="visor">
+        <div id="img-visor" class="quadro">
+          <div class="vazio-visor"><svg><use href="#i-imagem"/></svg><span>Sua imagem aparecerá aqui</span></div>
+        </div>
+        <div class="legenda-linha">
+          <p id="img-legenda" class="sutil pequeno"></p>
+          <div id="img-acoes-visor" class="acoes-visor" hidden>
+            <button id="img-reutilizar" class="icone" data-dica="Reutilizar prompt e seed"><svg><use href="#i-voltar"/></svg></button>
+            <button id="img-abrir" class="icone" data-dica="Abrir no Windows"><svg><use href="#i-externo"/></svg></button>
+          </div>
+        </div>
+        <div class="titulo-secao">
+          <h2>Recentes</h2>
+          <button id="img-pasta" class="fantasma pequeno"><svg><use href="#i-pasta"/></svg>Abrir pasta</button>
+        </div>
+        <div id="img-galeria" class="galeria"></div>
+      </section>
+    </main>
+
+    <main id="vista-painel" class="vista painel" hidden>
+      <header class="topo">
+        <div>
+          <h1>Painel</h1>
+          <p id="resumo" class="sutil">Verificando os serviços…</p>
+        </div>
+        <div class="acoes">
+          <button id="logs" class="fantasma"><svg><use href="#i-arquivo"/></svg>Logs</button>
+          <button id="alternar-servicos" class="primario"><svg><use href="#i-energia"/></svg><span>Iniciar</span></button>
+        </div>
+      </header>
+
+      <section class="grade">
+        <div id="servicos" class="contents"></div>
+        <div class="cartao">
+          <h2>Memória da GPU</h2>
+          <p id="vram-texto" class="numero">—</p>
+          <div class="progresso"><div id="vram-barra"></div></div>
+        </div>
+        <div class="cartao">
+          <h2>Geração</h2>
+          <p id="tokens" class="numero">—</p>
+          <p id="tokens-detalhe" class="sutil pequeno"></p>
+        </div>
+      </section>
+
+      <section class="cartao atividade">
+        <h2>Atividade</h2>
+        <ol id="atividade"></ol>
+        <p id="atividade-vazia" class="sutil pequeno">Nada por aqui ainda. As ações de iniciar e desligar aparecem nesta lista.</p>
+      </section>
+    </main>
+
+    <main id="vista-config" class="vista config" hidden>
+      <h1>Configurações</h1>
+
+      <section class="secao">
+        <h2>Aparência</h2>
+        <div class="cartao linha-config">
+          <div>
+            <p class="rotulo">Tema</p>
+            <p class="sutil pequeno">"Sistema" acompanha o modo claro ou escuro do Windows.</p>
+          </div>
+          <div id="tema-opcoes" class="segmentos">
+            <button data-valor="sistema"><svg><use href="#i-sistema"/></svg>Sistema</button>
+            <button data-valor="claro"><svg><use href="#i-sol"/></svg>Claro</button>
+            <button data-valor="escuro"><svg><use href="#i-lua"/></svg>Escuro</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="secao-modelos" class="secao">
+        <h2>Modelos</h2>
+        <div class="cartao">
+          <div class="linha-config">
+            <p class="rotulo">Conversa</p>
+            <button class="fantasma pequeno" data-pasta="conversa"><svg><use href="#i-pasta"/></svg>Abrir pasta</button>
+          </div>
+          <label for="mc-modelo">Modelo <span class="fraco">pastas em runtime\tabbyAPI\models</span></label>
+          <select id="mc-modelo"></select>
+          <p id="mc-aviso" class="aviso-campo" hidden></p>
+          <div class="grade-campos">
+            <div>
+              <label for="mc-contexto">Contexto</label>
+              <select id="mc-contexto">
+                <option value="8192">8 mil tokens</option>
+                <option value="16384">16 mil tokens</option>
+                <option value="32768">32 mil tokens</option>
+                <option value="65536">64 mil tokens</option>
+                <option value="131072">128 mil tokens</option>
+              </select>
+            </div>
+            <div>
+              <label for="mc-max">Limite por resposta</label>
+              <input id="mc-max" type="number" min="256" step="256">
+            </div>
+            <div>
+              <label for="mc-ferramentas">Formato de ferramentas</label>
+              <select id="mc-ferramentas"></select>
+            </div>
+          </div>
+          <div class="chaves">
+            <label class="chave"><input id="mc-raciocinio" type="checkbox"><span></span>Raciocínio separado da resposta</label>
+            <label class="chave"><input id="mc-visao" type="checkbox"><span></span>Visão (ler imagens)</label>
+          </div>
+          <div class="linha-mtp">
+            <label class="chave"><input id="mc-mtp" type="checkbox"><span></span>MTP: gera ~65% mais rápido, usa ~1 GB a mais de VRAM</label>
+            <label class="campo-mtp" for="mc-mtp-tokens">Tokens adiantados <input id="mc-mtp-tokens" type="number" min="1" max="8"></label>
+          </div>
+        </div>
+
+        <div class="cartao">
+          <div class="linha-config">
+            <p class="rotulo">Imagem</p>
+            <div id="mi-fonte" class="segmentos">
+              <button data-valor="checkpoint">Modelo SDXL</button>
+              <button data-valor="fluxo">Fluxo importado</button>
+            </div>
+          </div>
+          <div id="mi-bloco-checkpoint">
+            <label for="mi-checkpoint">Modelo <span class="fraco">arquivos em runtime\ComfyUI\models\checkpoints</span></label>
+            <div class="campo-com-botao">
+              <select id="mi-checkpoint"></select>
+              <button class="icone" data-pasta="imagem" data-dica="Abrir pasta"><svg><use href="#i-pasta"/></svg></button>
+            </div>
+            <p id="mi-aviso" class="aviso-campo" hidden></p>
+          </div>
+          <div id="mi-bloco-fluxo" hidden>
+            <label for="mi-fluxo">Fluxo do ComfyUI <span class="fraco">exportado em formato API</span></label>
+            <div class="campo-com-botao">
+              <select id="mi-fluxo"></select>
+              <button id="mi-importar" class="icone" data-dica="Importar fluxo (.json)"><svg><use href="#i-mais"/></svg></button>
+              <button class="icone" data-pasta="fluxos" data-dica="Abrir pasta"><svg><use href="#i-pasta"/></svg></button>
+            </div>
+            <p class="sutil pequeno">No fluxo, escreva <code>{{prompt}}</code> no prompt positivo. Também valem <code>{{negativo}}</code>, <code>{{seed}}</code>, <code>{{largura}}</code>, <code>{{altura}}</code>, <code>{{passos}}</code>, <code>{{cfg}}</code>, <code>{{sampler}}</code>, <code>{{scheduler}}</code> e <code>{{checkpoint}}</code>.</p>
+            <input id="mi-arquivo-fluxo" type="file" accept=".json" hidden>
+          </div>
+          <div class="grade-campos quatro">
+            <div>
+              <label for="mi-passos">Passos</label>
+              <input id="mi-passos" type="number" min="1" max="50">
+            </div>
+            <div>
+              <label for="mi-cfg">CFG</label>
+              <input id="mi-cfg" type="number" min="0" max="30" step="0.5">
+            </div>
+            <div>
+              <label for="mi-sampler">Sampler</label>
+              <select id="mi-sampler"></select>
+            </div>
+            <div>
+              <label for="mi-scheduler">Scheduler</label>
+              <select id="mi-scheduler"></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="acoes acoes-modelos">
+          <button id="mo-salvar" class="primario">Salvar</button>
+          <button id="mo-testar-conversa">Testar conversa</button>
+          <button id="mo-testar-imagem">Testar imagem</button>
+          <span class="espaco"></span>
+          <button id="mo-padrao" class="fantasma">Restaurar padrão</button>
+        </div>
+        <p id="mo-estado" class="sutil pequeno"></p>
+        <div id="mo-resultado" class="resultado-teste" hidden></div>
+      </section>
+
+      <section class="secao">
+        <h2>Proxmox <span class="fraco">somente leitura</span></h2>
+        <div class="cartao">
+          <div class="linha-config">
+            <p class="sutil pequeno">Use um usuário e token com papel <code>PVEAuditor</code>, nunca root. O segredo fica protegido pelo seu usuário do Windows (DPAPI) em <code>runtime\proxmox</code>.</p>
+            <span id="px-situacao" class="selo">Verificando…</span>
+          </div>
+          <label for="px-url">Endereço</label>
+          <input id="px-url" autocomplete="off" placeholder="https://proxmox.local:8006">
+          <label for="px-token">ID do token</label>
+          <input id="px-token" autocomplete="off" placeholder="ordis@pve!ordis">
+          <label for="px-segredo">Segredo do token</label>
+          <input id="px-segredo" type="password" autocomplete="off" placeholder="Deixe vazio para manter o atual">
+          <label>Certificado da CA <span class="fraco">pve-root-ca.pem</span></label>
+          <div class="arquivo-escolha">
+            <button id="px-ca-botao" class="fantasma"><svg><use href="#i-arquivo"/></svg>Escolher arquivo</button>
+            <span id="px-ca-nome" class="sutil pequeno">Mantém o certificado atual</span>
+            <input id="px-ca" type="file" accept=".pem,.crt,.cer" hidden>
+          </div>
+          <div class="acoes">
+            <button id="px-salvar" class="primario">Salvar e testar</button>
+            <button id="px-testar">Testar conexão</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao">
+        <h2>Atalhos</h2>
+        <div class="cartao atalhos">
+          <span>Trocar de aba</span><kbd>Ctrl+1 … 4</kbd>
+          <span>Nova conversa</span><kbd>Ctrl+N</kbd>
+          <span>Mostrar ou esconder conversas</span><kbd>Ctrl+B</kbd>
+          <span>Buscar conversas</span><kbd>Ctrl+K</kbd>
+          <span>Interromper a resposta</span><kbd>Esc</kbd>
+          <span>Quebrar linha na mensagem</span><kbd>Shift+Enter</kbd>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="avisos" class="avisos"></div>
+  <div id="dica" class="dica" hidden></div>
+
+  <script src="md.js"></script>
+  <script src="app.js"></script>
+  <script src="agente.js"></script>
+  <script src="imagens.js"></script>
+  <script src="config.js"></script>
+  <script src="modelos.js"></script>
+</body>
+</html>

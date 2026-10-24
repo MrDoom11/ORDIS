@@ -1,0 +1,23 @@
+network:
+  host: 127.0.0.1
+  port: 5000
+  disable_auth: false
+  allowed_origins: []
+model:
+  model_dir: models
+  model_name: Qwen3.8-27B-exl3-3.0bpw
+  backend: exllamav3
+  max_seq_len: 32768
+  cache_size: 32768
+  cache_mode: Q8
+  max_batch_size: 1
+  chunk_size: 1024
+  vision: true
+  reasoning: true
+  template_vars_default:
+    enable_thinking: true
+    reasoning_effort: xhigh
+  tool_format: qwen3_5
+  vision_offload: true
+sampling:
+  override_preset: ordis_qwen_thinking

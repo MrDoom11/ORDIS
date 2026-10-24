@@ -1,0 +1,10 @@
+#!/bin/sh
+# Trava de commit: recusa o commit se as linhas adicionadas tiverem dados
+# pessoais ou segredos. Para ignorar só desta vez (sabendo o que faz):
+# git commit --no-verify
+dir=$(dirname "$0")
+git diff --cached --no-color -U0 --diff-filter=d | grep '^+' | grep -v '^+++ ' | sh "$dir/verificar.sh" || {
+  echo "" >&2
+  echo "Commit recusado: remova os dados acima ou mova-os para runtime/ ou local/." >&2
+  exit 1
+}

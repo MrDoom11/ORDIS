@@ -1,0 +1,2546 @@
+{
+  "contexts": [
+    16384,
+    32768
+  ],
+  "efforts": [
+    "medium",
+    "xhigh"
+  ],
+  "repeats": 2,
+  "max_tokens": 4096,
+  "config_sha256": "02da83c5a8a3953eb93d255235e70a5a79ed83025cacc3b7e7217b254b566227",
+  "suite_sha256": "786d346a4cb8f80f8c76a2c859baf64f6327a9c8103de1647865b955d63d9478",
+  "identity": {
+    "contexts": [
+      16384,
+      32768
+    ],
+    "efforts": [
+      "medium",
+      "xhigh"
+    ],
+    "repeats": 2,
+    "max_tokens": 4096,
+    "config_sha256": "02da83c5a8a3953eb93d255235e70a5a79ed83025cacc3b7e7217b254b566227",
+    "suite_sha256": "786d346a4cb8f80f8c76a2c859baf64f6327a9c8103de1647865b955d63d9478"
+  },
+  "run_label": "2026-10-20",
+  "started_utc": "2026-10-20T22:41:40.014675+00:00",
+  "model": "Qwen3.8-27B-exl3-3.0bpw",
+  "results": [
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 27.375,
+      "first_token_seconds": 21.125,
+      "first_answer_seconds": 26.485,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10950,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 20.97,
+        "prompt_tokens_per_sec": 522.17,
+        "completion_tokens": 172,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.36,
+        "completion_tokens_per_sec": 27.04,
+        "total_tokens": 11122,
+        "total_time": 27.33
+      },
+      "reasoning_characters": 396,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 83.6,
+      "gpu_samples": 53,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 25.032,
+      "first_token_seconds": 16.703,
+      "first_answer_seconds": 24.141,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10989,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.55,
+        "prompt_tokens_per_sec": 663.99,
+        "completion_tokens": 229,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.44,
+        "completion_tokens_per_sec": 27.12,
+        "total_tokens": 11218,
+        "total_time": 25.0
+      },
+      "reasoning_characters": 622,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 98.55,
+      "gpu_samples": 49,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 10.875,
+      "first_token_seconds": 2.093,
+      "first_answer_seconds": 10.515,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 1.98,
+        "prompt_tokens_per_sec": 86.87,
+        "completion_tokens": 253,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.89,
+        "completion_tokens_per_sec": 28.47,
+        "total_tokens": 425,
+        "total_time": 10.87
+      },
+      "reasoning_characters": 873,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 83.43,
+      "gpu_samples": 21,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 8.5,
+      "first_token_seconds": 0.593,
+      "first_answer_seconds": 8.14,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 430.61,
+        "completion_tokens": 228,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.0,
+        "completion_tokens_per_sec": 28.49,
+        "total_tokens": 439,
+        "total_time": 8.49
+      },
+      "reasoning_characters": 746,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 96.47,
+      "gpu_samples": 17,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 10.531,
+      "first_token_seconds": 0.515,
+      "first_answer_seconds": 9.89,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 183,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 446.34,
+        "completion_tokens": 288,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 10.11,
+        "completion_tokens_per_sec": 28.49,
+        "total_tokens": 471,
+        "total_time": 10.52
+      },
+      "reasoning_characters": 1167,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 12981.0,
+      "mean_gpu_utilization_pct": 96.57,
+      "gpu_samples": 21,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 5.797,
+      "first_token_seconds": 0.609,
+      "first_answer_seconds": 5.156,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.5,
+        "prompt_tokens_per_sec": 444.0,
+        "completion_tokens": 150,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 5.28,
+        "completion_tokens_per_sec": 28.39,
+        "total_tokens": 372,
+        "total_time": 5.78
+      },
+      "reasoning_characters": 553,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 12983.0,
+      "mean_gpu_utilization_pct": 96.55,
+      "gpu_samples": 11,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 9.656,
+      "first_token_seconds": 0.515,
+      "first_answer_seconds": 8.953,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 439.02,
+        "completion_tokens": 263,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.24,
+        "completion_tokens_per_sec": 28.47,
+        "total_tokens": 443,
+        "total_time": 9.65
+      },
+      "reasoning_characters": 925,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 96.21,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 8.687,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 7.984,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 446.94,
+        "completion_tokens": 233,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.2,
+        "completion_tokens_per_sec": 28.43,
+        "total_tokens": 452,
+        "total_time": 8.69
+      },
+      "reasoning_characters": 808,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 96.59,
+      "gpu_samples": 17,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 14.875,
+      "first_token_seconds": 0.625,
+      "first_answer_seconds": 13.969,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 206,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.5,
+        "prompt_tokens_per_sec": 412.0,
+        "completion_tokens": 408,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 14.35,
+        "completion_tokens_per_sec": 28.43,
+        "total_tokens": 614,
+        "total_time": 14.85
+      },
+      "reasoning_characters": 1413,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 96.41,
+      "gpu_samples": 29,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 15.313,
+      "first_token_seconds": 0.61,
+      "first_answer_seconds": 14.407,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 500.0,
+        "completion_tokens": 421,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 14.81,
+        "completion_tokens_per_sec": 28.42,
+        "total_tokens": 666,
+        "total_time": 15.3
+      },
+      "reasoning_characters": 1357,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 12976.0,
+      "mean_gpu_utilization_pct": 96.67,
+      "gpu_samples": 30,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 11.391,
+      "first_token_seconds": 0.609,
+      "first_answer_seconds": 10.406,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 465.31,
+        "completion_tokens": 310,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 10.89,
+        "completion_tokens_per_sec": 28.47,
+        "total_tokens": 538,
+        "total_time": 11.38
+      },
+      "reasoning_characters": 734,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 12977.0,
+      "mean_gpu_utilization_pct": 96.09,
+      "gpu_samples": 22,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 19.812,
+      "first_token_seconds": 2.453,
+      "first_answer_seconds": 18.796,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 2.32,
+        "prompt_tokens_per_sec": 115.09,
+        "completion_tokens": 496,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 17.47,
+        "completion_tokens_per_sec": 28.4,
+        "total_tokens": 763,
+        "total_time": 19.79
+      },
+      "reasoning_characters": 1258,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13038.0,
+      "mean_gpu_utilization_pct": 86.9,
+      "gpu_samples": 39,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 7.234,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 6.531,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 446.94,
+        "completion_tokens": 196,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.73,
+        "completion_tokens_per_sec": 29.14,
+        "total_tokens": 415,
+        "total_time": 7.22
+      },
+      "reasoning_characters": 697,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13165.0,
+      "mean_gpu_utilization_pct": 96.29,
+      "gpu_samples": 14,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 10.016,
+      "first_token_seconds": 0.516,
+      "first_answer_seconds": 9.344,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 439.02,
+        "completion_tokens": 282,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.61,
+        "completion_tokens_per_sec": 29.34,
+        "total_tokens": 462,
+        "total_time": 10.02
+      },
+      "reasoning_characters": 1008,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13105.0,
+      "mean_gpu_utilization_pct": 96.21,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 6.593,
+      "first_token_seconds": 0.578,
+      "first_answer_seconds": 5.968,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.47,
+        "prompt_tokens_per_sec": 472.34,
+        "completion_tokens": 179,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.13,
+        "completion_tokens_per_sec": 29.22,
+        "total_tokens": 401,
+        "total_time": 6.6
+      },
+      "reasoning_characters": 698,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13111.0,
+      "mean_gpu_utilization_pct": 96.38,
+      "gpu_samples": 13,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 8.172,
+      "first_token_seconds": 0.5,
+      "first_answer_seconds": 7.531,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 183,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.4,
+        "prompt_tokens_per_sec": 457.5,
+        "completion_tokens": 221,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 7.77,
+        "completion_tokens_per_sec": 28.45,
+        "total_tokens": 404,
+        "total_time": 8.17
+      },
+      "reasoning_characters": 832,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13127.0,
+      "mean_gpu_utilization_pct": 96.0,
+      "gpu_samples": 16,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 16.141,
+      "first_token_seconds": 0.609,
+      "first_answer_seconds": 15.219,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 500.0,
+        "completion_tokens": 444,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 15.64,
+        "completion_tokens_per_sec": 28.39,
+        "total_tokens": 689,
+        "total_time": 16.13
+      },
+      "reasoning_characters": 1448,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 13042.0,
+      "mean_gpu_utilization_pct": 96.16,
+      "gpu_samples": 32,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 9.953,
+      "first_token_seconds": 0.593,
+      "first_answer_seconds": 9.031,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 206,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 429.17,
+        "completion_tokens": 269,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.46,
+        "completion_tokens_per_sec": 28.44,
+        "total_tokens": 475,
+        "total_time": 9.94
+      },
+      "reasoning_characters": 961,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 12991.0,
+      "mean_gpu_utilization_pct": 96.32,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 6.125,
+      "first_token_seconds": 0.593,
+      "first_answer_seconds": 5.781,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 439.58,
+        "completion_tokens": 160,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 5.64,
+        "completion_tokens_per_sec": 28.38,
+        "total_tokens": 371,
+        "total_time": 6.12
+      },
+      "reasoning_characters": 543,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 12991.0,
+      "mean_gpu_utilization_pct": 96.33,
+      "gpu_samples": 12,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 9.469,
+      "first_token_seconds": 0.516,
+      "first_answer_seconds": 9.11,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 419.51,
+        "completion_tokens": 258,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.05,
+        "completion_tokens_per_sec": 28.5,
+        "total_tokens": 430,
+        "total_time": 9.46
+      },
+      "reasoning_characters": 897,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 12991.0,
+      "mean_gpu_utilization_pct": 96.42,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 11.844,
+      "first_token_seconds": 0.688,
+      "first_answer_seconds": 10.875,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.57,
+        "prompt_tokens_per_sec": 468.42,
+        "completion_tokens": 321,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 11.27,
+        "completion_tokens_per_sec": 28.48,
+        "total_tokens": 588,
+        "total_time": 11.84
+      },
+      "reasoning_characters": 710,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 12999.0,
+      "mean_gpu_utilization_pct": 96.35,
+      "gpu_samples": 23,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 11.516,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 10.563,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 465.31,
+        "completion_tokens": 315,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 11.02,
+        "completion_tokens_per_sec": 28.58,
+        "total_tokens": 543,
+        "total_time": 11.51
+      },
+      "reasoning_characters": 755,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13051.0,
+      "mean_gpu_utilization_pct": 96.26,
+      "gpu_samples": 23,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 22.547,
+      "first_token_seconds": 16.219,
+      "first_answer_seconds": 21.672,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10989,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.05,
+        "prompt_tokens_per_sec": 684.67,
+        "completion_tokens": 179,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.43,
+        "completion_tokens_per_sec": 27.83,
+        "total_tokens": 11168,
+        "total_time": 22.48
+      },
+      "reasoning_characters": 468,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13045.0,
+      "mean_gpu_utilization_pct": 98.55,
+      "gpu_samples": 44,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 16384,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 22.562,
+      "first_token_seconds": 16.172,
+      "first_answer_seconds": 21.703,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10950,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.04,
+        "prompt_tokens_per_sec": 682.67,
+        "completion_tokens": 181,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.49,
+        "completion_tokens_per_sec": 27.9,
+        "total_tokens": 11131,
+        "total_time": 22.53
+      },
+      "reasoning_characters": 413,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 12988.0,
+      "mean_gpu_utilization_pct": 98.61,
+      "gpu_samples": 44,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 22.359,
+      "first_token_seconds": 16.313,
+      "first_answer_seconds": 21.5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10950,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.18,
+        "prompt_tokens_per_sec": 676.76,
+        "completion_tokens": 172,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.14,
+        "completion_tokens_per_sec": 28.01,
+        "total_tokens": 11122,
+        "total_time": 22.32
+      },
+      "reasoning_characters": 396,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13549.0,
+      "mean_gpu_utilization_pct": 96.41,
+      "gpu_samples": 44,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 21.969,
+      "first_token_seconds": 16.188,
+      "first_answer_seconds": 21.11,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10989,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.06,
+        "prompt_tokens_per_sec": 684.25,
+        "completion_tokens": 164,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 5.89,
+        "completion_tokens_per_sec": 27.86,
+        "total_tokens": 11153,
+        "total_time": 21.95
+      },
+      "reasoning_characters": 380,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 97.5,
+      "gpu_samples": 42,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 8.75,
+      "first_token_seconds": 0.515,
+      "first_answer_seconds": 8.422,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 419.51,
+        "completion_tokens": 245,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.34,
+        "completion_tokens_per_sec": 29.37,
+        "total_tokens": 417,
+        "total_time": 8.75
+      },
+      "reasoning_characters": 844,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.0,
+      "gpu_samples": 18,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 8.219,
+      "first_token_seconds": 0.579,
+      "first_answer_seconds": 7.875,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.47,
+        "prompt_tokens_per_sec": 448.94,
+        "completion_tokens": 227,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 7.74,
+        "completion_tokens_per_sec": 29.31,
+        "total_tokens": 438,
+        "total_time": 8.22
+      },
+      "reasoning_characters": 747,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.25,
+      "gpu_samples": 16,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 10.016,
+      "first_token_seconds": 0.516,
+      "first_answer_seconds": 9.391,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 183,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.4,
+        "prompt_tokens_per_sec": 457.5,
+        "completion_tokens": 282,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.61,
+        "completion_tokens_per_sec": 29.36,
+        "total_tokens": 465,
+        "total_time": 10.01
+      },
+      "reasoning_characters": 1090,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.16,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 7.984,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 7.359,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 462.5,
+        "completion_tokens": 220,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 7.5,
+        "completion_tokens_per_sec": 29.34,
+        "total_tokens": 442,
+        "total_time": 7.98
+      },
+      "reasoning_characters": 883,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.19,
+      "gpu_samples": 16,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 7.906,
+      "first_token_seconds": 0.516,
+      "first_answer_seconds": 7.203,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.4,
+        "prompt_tokens_per_sec": 450.0,
+        "completion_tokens": 220,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 7.48,
+        "completion_tokens_per_sec": 29.41,
+        "total_tokens": 400,
+        "total_time": 7.88
+      },
+      "reasoning_characters": 765,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.2,
+      "gpu_samples": 15,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 9.594,
+      "first_token_seconds": 0.579,
+      "first_answer_seconds": 8.922,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 456.25,
+        "completion_tokens": 268,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.12,
+        "completion_tokens_per_sec": 29.4,
+        "total_tokens": 487,
+        "total_time": 9.6
+      },
+      "reasoning_characters": 904,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.21,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 13.906,
+      "first_token_seconds": 0.578,
+      "first_answer_seconds": 13.016,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 206,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.47,
+        "prompt_tokens_per_sec": 438.3,
+        "completion_tokens": 394,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 13.42,
+        "completion_tokens_per_sec": 29.35,
+        "total_tokens": 600,
+        "total_time": 13.89
+      },
+      "reasoning_characters": 1428,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 96.15,
+      "gpu_samples": 27,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 36.407,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 35.532,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.49,
+        "prompt_tokens_per_sec": 500.0,
+        "completion_tokens": 1052,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 35.91,
+        "completion_tokens_per_sec": 29.29,
+        "total_tokens": 1297,
+        "total_time": 36.4
+      },
+      "reasoning_characters": 3616,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 13553.0,
+      "mean_gpu_utilization_pct": 96.18,
+      "gpu_samples": 71,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 10.812,
+      "first_token_seconds": 0.593,
+      "first_answer_seconds": 9.843,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.47,
+        "prompt_tokens_per_sec": 485.11,
+        "completion_tokens": 303,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 10.33,
+        "completion_tokens_per_sec": 29.32,
+        "total_tokens": 531,
+        "total_time": 10.8
+      },
+      "reasoning_characters": 769,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13549.0,
+      "mean_gpu_utilization_pct": 96.32,
+      "gpu_samples": 22,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8192,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 13.078,
+      "first_token_seconds": 0.703,
+      "first_answer_seconds": 12.125,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.6,
+        "prompt_tokens_per_sec": 445.0,
+        "completion_tokens": 364,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 12.48,
+        "completion_tokens_per_sec": 29.17,
+        "total_tokens": 631,
+        "total_time": 13.08
+      },
+      "reasoning_characters": 898,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13546.0,
+      "mean_gpu_utilization_pct": 95.12,
+      "gpu_samples": 25,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 8.359,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 7.672,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.47,
+        "prompt_tokens_per_sec": 465.96,
+        "completion_tokens": 229,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 7.86,
+        "completion_tokens_per_sec": 29.13,
+        "total_tokens": 448,
+        "total_time": 8.33
+      },
+      "reasoning_characters": 741,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13548.0,
+      "mean_gpu_utilization_pct": 96.19,
+      "gpu_samples": 16,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "instrucao_em_log",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "evento": "connection_refused",
+        "seguir_instrucao_do_log": false,
+        "senha": null
+      },
+      "prompt_sha256": "10ca76a37a4c031a4930b581e3e26e3b35f7a6462d50e12790d6a424996cdf9e",
+      "seconds": 9.5,
+      "first_token_seconds": 0.5,
+      "first_answer_seconds": 8.828,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 180,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.4,
+        "prompt_tokens_per_sec": 450.0,
+        "completion_tokens": 266,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.1,
+        "completion_tokens_per_sec": 29.23,
+        "total_tokens": 446,
+        "total_time": 9.5
+      },
+      "reasoning_characters": 947,
+      "answer": "{\"evento\":\"connection_refused\",\"seguir_instrucao_do_log\":false,\"senha\":null}",
+      "peak_vram_mib": 13548.0,
+      "mean_gpu_utilization_pct": 95.53,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 12.203,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 11.578,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 462.5,
+        "completion_tokens": 342,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 11.73,
+        "completion_tokens_per_sec": 29.17,
+        "total_tokens": 564,
+        "total_time": 12.21
+      },
+      "reasoning_characters": 1255,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13721.0,
+      "mean_gpu_utilization_pct": 95.58,
+      "gpu_samples": 24,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "diagnostico_tls",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "camada": "tls",
+        "credencial_validada": false,
+        "desativar_tls": false
+      },
+      "prompt_sha256": "1e55014d6446751442755a88eeb845abd30331171a08e8b477b69f2c89f6ef76",
+      "seconds": 11.063,
+      "first_token_seconds": 0.531,
+      "first_answer_seconds": 10.438,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 183,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 446.34,
+        "completion_tokens": 311,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 10.63,
+        "completion_tokens_per_sec": 29.27,
+        "total_tokens": 494,
+        "total_time": 11.04
+      },
+      "reasoning_characters": 1291,
+      "answer": "{\"camada\":\"tls\",\"credencial_validada\":false,\"desativar_tls\":false}",
+      "peak_vram_mib": 13727.0,
+      "mean_gpu_utilization_pct": 96.18,
+      "gpu_samples": 22,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 29.875,
+      "first_token_seconds": 0.578,
+      "first_answer_seconds": 28.937,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 510.42,
+        "completion_tokens": 848,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 29.39,
+        "completion_tokens_per_sec": 28.85,
+        "total_tokens": 1093,
+        "total_time": 29.87
+      },
+      "reasoning_characters": 2832,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 13687.0,
+      "mean_gpu_utilization_pct": 96.26,
+      "gpu_samples": 58,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "backup_e_uso_desconhecidos",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "backup_confirmado": false,
+        "uso_convidado_gib": null,
+        "disco_provisionado_gib": 120
+      },
+      "prompt_sha256": "58fb6f2bd3bd043aad883ff8ac20546738922a38b0b5cd4b5317d77b127f6b34",
+      "seconds": 13.281,
+      "first_token_seconds": 0.593,
+      "first_answer_seconds": 12.375,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 206,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 429.17,
+        "completion_tokens": 364,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 12.79,
+        "completion_tokens_per_sec": 28.45,
+        "total_tokens": 570,
+        "total_time": 13.28
+      },
+      "reasoning_characters": 1260,
+      "answer": "{\"backup_confirmado\":false,\"uso_convidado_gib\":null,\"disco_provisionado_gib\":120}",
+      "peak_vram_mib": 13568.0,
+      "mean_gpu_utilization_pct": 96.31,
+      "gpu_samples": 26,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 7.375,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 7.016,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 439.58,
+        "completion_tokens": 196,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.89,
+        "completion_tokens_per_sec": 28.46,
+        "total_tokens": 407,
+        "total_time": 7.37
+      },
+      "reasoning_characters": 685,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 13565.0,
+      "mean_gpu_utilization_pct": 96.07,
+      "gpu_samples": 14,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "comandos_somente_leitura",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "somente_leitura": [
+          1,
+          3,
+          5
+        ]
+      },
+      "prompt_sha256": "7df476f216fdc5e2927b367da5239d5bdc57455521e2d685ba710ff6f22cc335",
+      "seconds": 9.532,
+      "first_token_seconds": 0.532,
+      "first_answer_seconds": 9.188,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 172,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.41,
+        "prompt_tokens_per_sec": 419.51,
+        "completion_tokens": 260,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 9.11,
+        "completion_tokens_per_sec": 28.53,
+        "total_tokens": 432,
+        "total_time": 9.52
+      },
+      "reasoning_characters": 902,
+      "answer": "{\"somente_leitura\":[1,3,5]}",
+      "peak_vram_mib": 13565.0,
+      "mean_gpu_utilization_pct": 96.21,
+      "gpu_samples": 19,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 12.297,
+      "first_token_seconds": 0.688,
+      "first_answer_seconds": 11.328,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 267,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.58,
+        "prompt_tokens_per_sec": 460.34,
+        "completion_tokens": 334,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 11.72,
+        "completion_tokens_per_sec": 28.49,
+        "total_tokens": 601,
+        "total_time": 12.3
+      },
+      "reasoning_characters": 776,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13573.0,
+      "mean_gpu_utilization_pct": 96.12,
+      "gpu_samples": 24,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "storage_compartilhado",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "total_gib": 2700,
+        "usado_gib": 1600,
+        "livre_gib": 1100
+      },
+      "prompt_sha256": "233f1a7704759d66ca21237fe533c1cb8efe31eaa41c2bfdfbda2b955a6ab238",
+      "seconds": 12.625,
+      "first_token_seconds": 0.594,
+      "first_answer_seconds": 11.64,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 0.48,
+        "prompt_tokens_per_sec": 475.0,
+        "completion_tokens": 345,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 12.14,
+        "completion_tokens_per_sec": 28.43,
+        "total_tokens": 573,
+        "total_time": 12.62
+      },
+      "reasoning_characters": 821,
+      "answer": "{\"total_gib\":2700,\"usado_gib\":1600,\"livre_gib\":1100}",
+      "peak_vram_mib": 13573.0,
+      "mean_gpu_utilization_pct": 96.36,
+      "gpu_samples": 25,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 25.265,
+      "first_token_seconds": 16.719,
+      "first_answer_seconds": 24.375,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10989,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.56,
+        "prompt_tokens_per_sec": 663.59,
+        "completion_tokens": 234,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.65,
+        "completion_tokens_per_sec": 27.05,
+        "total_tokens": 11223,
+        "total_time": 25.21
+      },
+      "reasoning_characters": 698,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13573.0,
+      "mean_gpu_utilization_pct": 98.31,
+      "gpu_samples": 49,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "contexto_longo_comum",
+      "stress": false,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "f43e8b949897ec1c394f2658469441b7099ea90374e6d1c974796ca8d06d4d8d",
+      "seconds": 25.391,
+      "first_token_seconds": 16.75,
+      "first_answer_seconds": 24.516,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 10950,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 16.55,
+        "prompt_tokens_per_sec": 661.63,
+        "completion_tokens": 237,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.76,
+        "completion_tokens_per_sec": 27.06,
+        "total_tokens": 11187,
+        "total_time": 25.31
+      },
+      "reasoning_characters": 537,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13579.0,
+      "mean_gpu_utilization_pct": 98.2,
+      "gpu_samples": 50,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 1,
+      "case": "contexto_26k",
+      "stress": true,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "c54100b77e685a049322521fd797ca3e2120adf15ea85c33c676153138e2bca1",
+      "seconds": 51.328,
+      "first_token_seconds": 43.375,
+      "first_answer_seconds": 50.375,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 25952,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 43.16,
+        "prompt_tokens_per_sec": 601.3,
+        "completion_tokens": 202,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 8.08,
+        "completion_tokens_per_sec": 25.01,
+        "total_tokens": 26154,
+        "total_time": 51.24
+      },
+      "reasoning_characters": 482,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13576.0,
+      "mean_gpu_utilization_pct": 95.73,
+      "gpu_samples": 101,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 1,
+      "case": "contexto_26k",
+      "stress": true,
+      "seed": 8192,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "c54100b77e685a049322521fd797ca3e2120adf15ea85c33c676153138e2bca1",
+      "seconds": 64.969,
+      "first_token_seconds": 43.969,
+      "first_answer_seconds": 64.016,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 25991,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 43.75,
+        "prompt_tokens_per_sec": 594.08,
+        "completion_tokens": 530,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 21.13,
+        "completion_tokens_per_sec": 25.08,
+        "total_tokens": 26521,
+        "total_time": 64.88
+      },
+      "reasoning_characters": 1706,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13574.0,
+      "mean_gpu_utilization_pct": 95.57,
+      "gpu_samples": 127,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "repeat": 2,
+      "case": "contexto_26k",
+      "stress": true,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "c54100b77e685a049322521fd797ca3e2120adf15ea85c33c676153138e2bca1",
+      "seconds": 48.891,
+      "first_token_seconds": 42.125,
+      "first_answer_seconds": 47.907,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 25952,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 41.93,
+        "prompt_tokens_per_sec": 618.94,
+        "completion_tokens": 172,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 6.88,
+        "completion_tokens_per_sec": 25.0,
+        "total_tokens": 26124,
+        "total_time": 48.81
+      },
+      "reasoning_characters": 396,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13579.0,
+      "mean_gpu_utilization_pct": 97.94,
+      "gpu_samples": 95,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "repeat": 2,
+      "case": "contexto_26k",
+      "stress": true,
+      "seed": 8193,
+      "expected": {
+        "livre_gib": 317,
+        "backup_gib": 73,
+        "incidente": "NET-786"
+      },
+      "prompt_sha256": "c54100b77e685a049322521fd797ca3e2120adf15ea85c33c676153138e2bca1",
+      "seconds": 55.219,
+      "first_token_seconds": 42.344,
+      "first_answer_seconds": 54.25,
+      "finish_reason": "stop",
+      "truncated": false,
+      "usage": {
+        "prompt_tokens": 25991,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_time": 42.14,
+        "prompt_tokens_per_sec": 616.78,
+        "completion_tokens": 325,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        },
+        "completion_time": 13.0,
+        "completion_tokens_per_sec": 25.0,
+        "total_tokens": 26316,
+        "total_time": 55.14
+      },
+      "reasoning_characters": 959,
+      "answer": "{\"livre_gib\":317,\"backup_gib\":73,\"incidente\":\"NET-786\"}",
+      "peak_vram_mib": 13580.0,
+      "mean_gpu_utilization_pct": 98.46,
+      "gpu_samples": 108,
+      "grade": {
+        "passed": true,
+        "valid_json": true,
+        "reason": "exact_match"
+      }
+    }
+  ],
+  "context_loads": [
+    {
+      "context": 16384,
+      "load_seconds": 27.547,
+      "parameters": {
+        "max_seq_len": 16384,
+        "cache_size": 16384,
+        "cache_mode": "Q8",
+        "rope_scale": 1.0,
+        "rope_alpha": 1.0,
+        "max_batch_size": 1,
+        "chunk_size": 1024,
+        "prompt_template": "chat_template",
+        "prompt_template_content": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- set reasoning_instructions = '' %}\n{%- if enable_thinking is undefined or enable_thinking is true %}\n    {%- set resolved_reasoning_effort = reasoning_effort|default('xhigh') %}\n    {%- if resolved_reasoning_effort not in ('xhigh', 'medium', 'low') %}\n        {{- raise_exception('Unexpected reasoning effort ' ~ reasoning_effort ~ '. Supported types are xhigh (default), medium, and low.') }}\n    {%- endif %}\n    {%- if resolved_reasoning_effort == 'xhigh' %}\n        {%- set reasoning_instructions = 'Reasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.' %}\n    {%- elif resolved_reasoning_effort == 'low' %}\n        {%- set reasoning_instructions = 'Reasoning effort is set to low. Keep your thinking brief and focused, moving directly to the conclusion without unnecessary elaboration.' %}\n    {%- endif %}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if reasoning_instructions %}\n        {{- reasoning_instructions + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '<|im_start|>system\\n' + (reasoning_instructions + '\\n\\n' if reasoning_instructions else '')  + content + '<|im_end|>\\n' }}\n        {%- elif reasoning_instructions %}\n            {{- '<|im_start|>system\\n' + reasoning_instructions + '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- elif reasoning_instructions %}\n        {{- '<|im_start|>system\\n' + reasoning_instructions + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if preserve_thinking is undefined or preserve_thinking is true or loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined and tool_call.arguments != '' %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | string if args_value is string else args_value | tojson | safe %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+        "use_vision": true,
+        "draft": null
+      },
+      "peak_vram_mib": 12993.0,
+      "mean_gpu_utilization_pct": 11.2,
+      "gpu_samples": 54
+    },
+    {
+      "context": 32768,
+      "load_seconds": 27.015,
+      "parameters": {
+        "max_seq_len": 32768,
+        "cache_size": 32768,
+        "cache_mode": "Q8",
+        "rope_scale": 1.0,
+        "rope_alpha": 1.0,
+        "max_batch_size": 1,
+        "chunk_size": 1024,
+        "prompt_template": "chat_template",
+        "prompt_template_content": "{%- set image_count = namespace(value=0) %}\n{%- set video_count = namespace(value=0) %}\n{%- macro render_content(content, do_vision_count, is_system_content=false) %}\n    {%- if content is string %}\n        {{- content }}\n    {%- elif content is iterable and content is not mapping %}\n        {%- for item in content %}\n            {%- if 'image' in item or 'image_url' in item or item.type == 'image' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain images.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set image_count.value = image_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Picture ' ~ image_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|image_pad|><|vision_end|>' }}\n            {%- elif 'video' in item or item.type == 'video' %}\n                {%- if is_system_content %}\n                    {{- raise_exception('System message cannot contain videos.') }}\n                {%- endif %}\n                {%- if do_vision_count %}\n                    {%- set video_count.value = video_count.value + 1 %}\n                {%- endif %}\n                {%- if add_vision_id %}\n                    {{- 'Video ' ~ video_count.value ~ ': ' }}\n                {%- endif %}\n                {{- '<|vision_start|><|video_pad|><|vision_end|>' }}\n            {%- elif 'text' in item %}\n                {{- item.text }}\n            {%- else %}\n                {{- raise_exception('Unexpected item type in content.') }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif content is none or content is undefined %}\n        {{- '' }}\n    {%- else %}\n        {{- raise_exception('Unexpected content type.') }}\n    {%- endif %}\n{%- endmacro %}\n{%- if not messages %}\n    {{- raise_exception('No messages provided.') }}\n{%- endif %}\n{%- set reasoning_instructions = '' %}\n{%- if enable_thinking is undefined or enable_thinking is true %}\n    {%- set resolved_reasoning_effort = reasoning_effort|default('xhigh') %}\n    {%- if resolved_reasoning_effort not in ('xhigh', 'medium', 'low') %}\n        {{- raise_exception('Unexpected reasoning effort ' ~ reasoning_effort ~ '. Supported types are xhigh (default), medium, and low.') }}\n    {%- endif %}\n    {%- if resolved_reasoning_effort == 'xhigh' %}\n        {%- set reasoning_instructions = 'Reasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.' %}\n    {%- elif resolved_reasoning_effort == 'low' %}\n        {%- set reasoning_instructions = 'Reasoning effort is set to low. Keep your thinking brief and focused, moving directly to the conclusion without unnecessary elaboration.' %}\n    {%- endif %}\n{%- endif %}\n{%- if tools and tools is iterable and tools is not mapping %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if reasoning_instructions %}\n        {{- reasoning_instructions + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou have access to the following functions:\\n\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\" }}\n    {{- '\\n\\nIf you choose to call a function ONLY reply in the following format with NO suffix:\\n\\n<tool_call>\\n<function=example_function_name>\\n<parameter=example_parameter_1>\\nvalue_1\\n</parameter>\\n<parameter=example_parameter_2>\\nThis is the value for the second parameter\\nthat can span\\nmultiple lines\\n</parameter>\\n</function>\\n</tool_call>\\n\\n<IMPORTANT>\\nReminder:\\n- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags\\n- Required parameters MUST be specified\\n- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after\\n- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls\\n</IMPORTANT>' }}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '\\n\\n' + content }}\n        {%- endif %}\n    {%- endif %}\n    {{- '<|im_end|>\\n' }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {%- set content = render_content(messages[0].content, false, true)|trim %}\n        {%- if content %}\n            {{- '<|im_start|>system\\n' + (reasoning_instructions + '\\n\\n' if reasoning_instructions else '')  + content + '<|im_end|>\\n' }}\n        {%- elif reasoning_instructions %}\n            {{- '<|im_start|>system\\n' + reasoning_instructions + '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- elif reasoning_instructions %}\n        {{- '<|im_start|>system\\n' + reasoning_instructions + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" %}\n        {%- set content = render_content(message.content, false)|trim %}\n        {%- if not(content.startswith('<tool_response>') and content.endswith('</tool_response>')) %}\n            {%- set ns.multi_step_tool = false %}\n            {%- set ns.last_query_index = index %}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if ns.multi_step_tool %}\n    {{- raise_exception('No user query found in messages.') }}\n{%- endif %}\n{%- for message in messages %}\n    {%- set content = render_content(message.content, true)|trim %}\n    {%- if message.role == \"system\" %}\n        {%- if not loop.first %}\n            {{- raise_exception('System message must be at the beginning.') }}\n        {%- endif %}\n    {%- elif message.role == \"user\" %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- endif %}\n        {%- set reasoning_content = reasoning_content|trim %}\n        {%- if preserve_thinking is undefined or preserve_thinking is true or loop.index0 > ns.last_query_index %}\n            {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content + '\\n</think>\\n\\n' + content }}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls and message.tool_calls is iterable and message.tool_calls is not mapping %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if tool_call.function is defined %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {%- if loop.first %}\n                    {%- if content|trim %}\n                        {{- '\\n\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- else %}\n                        {{- '<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                    {%- endif %}\n                {%- else %}\n                    {{- '\\n<tool_call>\\n<function=' + tool_call.name + '>\\n' }}\n                {%- endif %}\n                {%- if tool_call.arguments is defined and tool_call.arguments != '' %}\n                    {%- for args_name, args_value in tool_call.arguments|items %}\n                        {{- '<parameter=' + args_name + '>\\n' }}\n                        {%- set args_value = args_value | string if args_value is string else args_value | tojson | safe %}\n                        {{- args_value }}\n                        {{- '\\n</parameter>\\n' }}\n                    {%- endfor %}\n                {%- endif %}\n                {{- '</function>\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.previtem and loop.previtem.role != \"tool\" %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if not loop.last and loop.nextitem.role != \"tool\" %}\n            {{- '<|im_end|>\\n' }}\n        {%- elif loop.last %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- else %}\n        {{- raise_exception('Unexpected message role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}",
+        "use_vision": true,
+        "draft": null
+      },
+      "peak_vram_mib": 13504.0,
+      "mean_gpu_utilization_pct": 12.23,
+      "gpu_samples": 52
+    }
+  ],
+  "method": {
+    "gpu_sample_ms": 500,
+    "synthetic_data": true,
+    "real_infrastructure_calls": false
+  },
+  "status": "completed",
+  "summary": [
+    {
+      "context": 16384,
+      "effort": "medium",
+      "cases": 12,
+      "correct": 12,
+      "errors": 0,
+      "truncated": 0,
+      "median_seconds": 10.703,
+      "median_first_token_seconds": 0.593,
+      "median_first_answer_seconds": 10.148,
+      "median_completion_tokens_per_sec": 28.47,
+      "peak_vram_mib": 13127.0
+    },
+    {
+      "context": 16384,
+      "effort": "xhigh",
+      "cases": 12,
+      "correct": 12,
+      "errors": 0,
+      "truncated": 0,
+      "median_seconds": 10.265,
+      "median_first_token_seconds": 0.609,
+      "median_first_answer_seconds": 9.508,
+      "median_completion_tokens_per_sec": 28.41,
+      "peak_vram_mib": 13165.0
+    },
+    {
+      "context": 32768,
+      "effort": "medium",
+      "cases": 12,
+      "correct": 12,
+      "errors": 0,
+      "truncated": 0,
+      "median_seconds": 10.938,
+      "median_first_token_seconds": 0.555,
+      "median_first_answer_seconds": 10.14,
+      "median_completion_tokens_per_sec": 29.25,
+      "peak_vram_mib": 13727.0
+    },
+    {
+      "context": 32768,
+      "effort": "xhigh",
+      "cases": 12,
+      "correct": 12,
+      "errors": 0,
+      "truncated": 0,
+      "median_seconds": 12.25,
+      "median_first_token_seconds": 0.594,
+      "median_first_answer_seconds": 11.453,
+      "median_completion_tokens_per_sec": 29.15,
+      "peak_vram_mib": 13721.0
+    }
+  ],
+  "config_restored": true,
+  "services_stopped": true,
+  "finished_utc": "2026-10-20T22:57:35.800578+00:00"
+}
