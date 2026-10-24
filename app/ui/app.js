@@ -286,3 +286,20 @@ atualizar();
 setInterval(() => {
   if (!ocupado) atualizar();
 }, 3000);
+
+// Abertura: a janela nasce oculta. Se ainda não apareceu (menos de 500 ms),
+// some com o anel e mostra a interface pronta; se o Rust já a mostrou com o
+// anel girando, o anel sai com um fade.
+window.addEventListener('load', async () => {
+  const janela = window.__TAURI__.window.getCurrentWindow();
+  const visivel = await janela.isVisible().catch(() => true);
+  const anel = $('abertura');
+  document.documentElement.classList.remove('abrindo');
+  if (visivel) {
+    anel.classList.add('saindo');
+    anel.addEventListener('transitionend', () => anel.remove(), { once: true });
+  } else {
+    anel.remove();
+    janela.show();
+  }
+});

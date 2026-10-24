@@ -14,7 +14,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Arc, Mutex};
 
 use serde_json::{json, Value};
-use tauri::{AppHandle, Emitter, State};
+use tauri::{AppHandle, Emitter, Manager, State};
 
 use controle::{Caminhos, Painel};
 
@@ -348,6 +348,18 @@ fn main() {
     };
     tauri::Builder::default()
         .manage::<Ctx>(Arc::new(App { caminhos, resposta: Mutex::new(None), imagem: Mutex::new(None) }))
+        .setup(|app| {
+            // A janela nasce oculta e a interface a mostra quando termina de
+            // carregar. Se passar de 500 ms (PC lento, abertura a frio), ela
+            // aparece mesmo assim, com o anel de carregamento do index.html.
+            if let Some(janela) = app.get_webview_window("main") {
+                std::thread::spawn(move || {
+                    std::thread::sleep(std::time::Duration::from_millis(500));
+                    let _ = janela.show();
+                });
+            }
+            Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             painel,
             iniciar,

@@ -3,5 +3,5 @@
   "identifier": "default",
   "description": "Janela principal do ORDIS",
   "windows": ["main"],
-  "permissions": ["core:default", "core:window:allow-set-theme"]
+  "permissions": ["core:default", "core:window:allow-set-theme", "core:window:allow-show"]
 }

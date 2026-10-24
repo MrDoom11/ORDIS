@@ -719,3 +719,31 @@ select option { background: var(--solido); color: var(--texto); }
 .resultado-teste .etapa .detalhe { color: var(--sutil); flex: 1; }
 .resultado-teste .etapa .tempo { color: var(--fraco); font-size: 12px; }
 .resultado-teste img { max-width: 220px; border-radius: 8px; cursor: zoom-in; margin-top: 4px; }
+
+/* Abertura: o anel só aparece quando a interface passa de 500 ms para
+   carregar (a janela é mostrada pelo Rust nesse momento). Antes disso a
+   janela fica oculta e abre direto na interface. */
+.abrindo body > :not(.abertura) { visibility: hidden; }
+.abertura {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.abertura > * { grid-area: 1 / 1; }
+.abertura img { width: 40px; height: 40px; }
+.abertura svg {
+  width: 72px;
+  height: 72px;
+  fill: none;
+  stroke: var(--azul);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 60 182;
+  animation: girar 0.9s linear infinite;
+}
+.abertura.saindo { opacity: 0; }
+@keyframes girar { to { transform: rotate(360deg); } }
