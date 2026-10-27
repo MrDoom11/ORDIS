@@ -21,6 +21,7 @@
   --erro: #f07a7a;
   --sombra: 0 8px 28px rgba(0, 0, 0, 0.45);
   --codigo: rgba(0, 0, 0, 0.3);
+  --barra: 40px;
   color-scheme: dark;
 }
 
@@ -209,7 +210,7 @@ textarea { resize: vertical; }
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 12px 0;
+  padding: 6px 0 12px;
 }
 .marca { width: 28px; height: 28px; margin-bottom: 14px; }
 .trilho .espaco { flex: 1; }
@@ -245,8 +246,38 @@ textarea { resize: vertical; }
   border-left: 1px solid var(--borda);
   border-top: 1px solid var(--borda);
   border-top-left-radius: 10px;
-  margin-top: 8px;
+  margin-top: var(--barra);
 }
+
+/* Sem a barra de título do Windows: a faixa de cima tem o fundo do trilho
+   e forma com ele uma moldura só, com o logo no canto. Arrastar a faixa
+   move a janela e o duplo clique maximiza; os botões usam os glifos do
+   próprio Windows. */
+.barra-janela {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--barra);
+  z-index: 15;
+  display: flex;
+  justify-content: flex-end;
+}
+button.controle {
+  width: 46px;
+  height: 100%;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--texto);
+  font: 10px "Segoe Fluent Icons", "Segoe MDL2 Assets";
+  transition: none;
+}
+button.controle:hover { background: var(--superficie-2); }
+button.controle:active { background: var(--superficie); }
+button.controle.fechar:hover { background: #c42b1c; color: #fff; }
+button.controle.fechar:active { background: #c84031; }
+.inativa button.controle:not(:hover) { color: var(--fraco); }
 .vista { flex: 1; min-width: 0; }
 
 /* Dicas e avisos */
@@ -723,7 +754,7 @@ select option { background: var(--solido); color: var(--texto); }
 /* Abertura: o anel só aparece quando a interface passa de 500 ms para
    carregar (a janela é mostrada pelo Rust nesse momento). Antes disso a
    janela fica oculta e abre direto na interface. */
-.abrindo body > :not(.abertura) { visibility: hidden; }
+.abrindo body > :not(.abertura, .barra-janela) { visibility: hidden; }
 .abertura {
   position: fixed;
   inset: 0;

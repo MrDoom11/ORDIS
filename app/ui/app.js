@@ -287,6 +287,25 @@ setInterval(() => {
   if (!ocupado) atualizar();
 }, 3000);
 
+// Barra da janela: a de título do Windows está desligada (tauri.conf.json).
+(() => {
+  const janela = window.__TAURI__.window.getCurrentWindow();
+  const maximizar = $('janela-maximizar');
+  $('janela-minimizar').addEventListener('click', () => janela.minimize());
+  maximizar.addEventListener('click', () => janela.toggleMaximize());
+  $('janela-fechar').addEventListener('click', () => janela.close());
+  const atualizarMaximizar = async () => {
+    const max = await janela.isMaximized().catch(() => false);
+    maximizar.textContent = String.fromCharCode(max ? 0xe923 : 0xe922);
+    maximizar.setAttribute('aria-label', max ? 'Restaurar' : 'Maximizar');
+  };
+  janela.onResized(atualizarMaximizar);
+  atualizarMaximizar();
+  const raiz = document.documentElement;
+  window.addEventListener('blur', () => raiz.classList.add('inativa'));
+  window.addEventListener('focus', () => raiz.classList.remove('inativa'));
+})();
+
 // Abertura: a janela nasce oculta. Se ainda não apareceu (menos de 500 ms),
 // some com o anel e mostra a interface pronta; se o Rust já a mostrou com o
 // anel girando, o anel sai com um fade.

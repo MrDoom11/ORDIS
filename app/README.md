@@ -20,7 +20,7 @@ O `rust-toolchain.toml` seleciona o toolchain GNU, que não depende do Windows S
 
 ## Interface
 
-A janela usa o acrílico do Windows 11. A navegação fica numa barra fina de ícones à esquerda, com o tema, o estado dos serviços e as configurações embaixo. O ponto de estado fica azul com o Qwen pronto e pisca enquanto inicia; um clique nele mostra os serviços, a memória da GPU e o botão de iniciar ou desligar. Durante uma geração de imagem, ele também pisca e a linha sob a caixa de mensagem avisa que o Qwen saiu da GPU e volta sozinho, para a troca de modelos não parecer travamento.
+A janela usa o acrílico do Windows 11, sem a barra de título do Windows: a faixa de cima, com o logo e os botões de minimizar, maximizar e fechar, tem o mesmo fundo da barra lateral e forma com ela uma moldura só. Arrastar a faixa move a janela e o duplo clique maximiza. A navegação fica numa barra fina de ícones à esquerda, com o tema, o estado dos serviços e as configurações embaixo. O ponto de estado fica azul com o Qwen pronto e pisca enquanto inicia; um clique nele mostra os serviços, a memória da GPU e o botão de iniciar ou desligar. Durante uma geração de imagem, ele também pisca e a linha sob a caixa de mensagem avisa que o Qwen saiu da GPU e volta sozinho, para a troca de modelos não parecer travamento.
 
 O tema pode ser Sistema (segue o modo claro ou escuro do Windows), Claro ou Escuro, em Configurações ou pelo ícone da barra. A escolha vale também para a barra de título e fica guardada no perfil do WebView2.
 

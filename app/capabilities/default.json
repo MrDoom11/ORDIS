@@ -3,5 +3,7 @@
   "identifier": "default",
   "description": "Janela principal do ORDIS",
   "windows": ["main"],
-  "permissions": ["core:default", "core:window:allow-set-theme", "core:window:allow-show"]
+  "permissions": ["core:default", "core:window:allow-set-theme", "core:window:allow-show",
+    "core:window:allow-start-dragging", "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize", "core:window:allow-close"]
 }
